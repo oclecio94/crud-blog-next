@@ -1,19 +1,22 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
-const getPostById = async (id: string) => {
-  "use server";
-  const posts = await prisma.posts.findUnique({
+// const getPostById = async (id: string) => {
+//   const posts = await prisma.posts.findUnique({
+//     where: {
+//       id: id,
+//     },
+//   });
+
+//   return posts;
+// };
+
+const page = async ({ params: { id } }: { params: { id: string } }) => {
+  const posts: any = await prisma.posts.findUnique({
     where: {
       id: id,
     },
   });
-
-  return posts;
-};
-
-const page = async ({ params }: { params: { id: string } }) => {
-  const posts: any = await getPostById(params.id);
   return (
     <div className="flex items-center justify-center h-screen bg-blue-200">
       <div className="bg-gray-100 p-6 rounded-lg">
