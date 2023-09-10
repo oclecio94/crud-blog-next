@@ -2,9 +2,7 @@ import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
 const getPostById = async (id: string) => {
-  // const res = await fetch(`/api/posts/${id}`);
-  // const data = await res.json();
-  // return data;
+  "use server";
   const posts = await prisma.posts.findUnique({
     where: {
       id: id,
