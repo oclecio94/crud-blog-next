@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const getPostById = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`);
+  const res = await fetch(`/api/posts/${id}`);
   const data = await res.json();
   return data;
 };

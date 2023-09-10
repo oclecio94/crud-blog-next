@@ -12,7 +12,7 @@ const page = () => {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
-    const response = await fetch("http://localhost:3000/api/posts");
+    const response = await fetch("/api/posts");
 
     const json = await response.json();
 

@@ -11,7 +11,7 @@ const post = async ({
   title: string;
   description: string;
 }) => {
-  const res = fetch("http://localhost:3000/api/posts", {
+  const res = fetch("/api/posts", {
     method: "POST",
     body: JSON.stringify({ title, description }),
     //@ts-ignore

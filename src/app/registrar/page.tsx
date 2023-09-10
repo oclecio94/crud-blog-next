@@ -11,7 +11,7 @@ const createUser = async ({
   email: string;
   password: string;
 }) => {
-  const res = fetch("http://localhost:3000/api/register", {
+  const res = fetch("/api/register", {
     method: "POST",
     body: JSON.stringify({ email, password }),
     //@ts-ignore

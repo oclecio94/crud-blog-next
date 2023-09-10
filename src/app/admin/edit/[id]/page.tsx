@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const updatePost = async (data: any) => {
   console.log(data);
-  const res = fetch(`http://localhost:3000/api/posts/${data.id}`, {
+  const res = fetch(`/api/posts/${data.id}`, {
     method: "PUT",
     body: JSON.stringify({
       title: data.title,
@@ -19,7 +19,7 @@ const updatePost = async (data: any) => {
 };
 
 const deletePost = async (id: string) => {
-  const res = fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = fetch(`/api/posts/${id}`, {
     method: "DELETE",
     //@ts-ignore
     "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const deletePost = async (id: string) => {
 };
 
 const getPostById = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`);
+  const res = await fetch(`/api/posts/${id}`);
   const data = await res.json();
   return data;
 };
